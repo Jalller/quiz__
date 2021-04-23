@@ -1,0 +1,37 @@
+1.	Controller.loadData(). 
+Programmet starter med at loade data. 
+Hvis ikke der er noget spil i gang vil brugeren skulle indtaste spillere
+
+2.	startOrContinueGame(). 
+Hvis der ikke er nogle spillere registreret, bliver man sendt til at registrere spillere. Ellers start nyt spil
+
+3.	runGameLoop().
+Loopet kører spillerne igennem, og spørger om der er klar til en runde mere, hvis ja kører den spillerne igennem igen.. eller Hvis der indtastes N vil loopet stoppe (da det kun kører hvis ikke input.toUpperCase er lig N). Den printer hernæst at den afslutter spillet.  
+
+4.	playerCount == antal spillere.
+Dette tjekkes for at se hvornår vi når den sidste spiller, og vi derfor starter ny runde (playerCount sættes lig nul, og vi starter så med spiller 1 igen).
+
+5.	doTurn(Player player). 
+currentPosition får sin værdi fra Player.updatePosition, her sættes dens position + hvad man har slået med terningen sammen(throwDice) og giver hermed den nuværende position. board.getField() returnere hvilken type felt man er på ud fra ens position
+
+6.	processResponse(Action a, Field f). 
+Metoden kaldes når spilleren skal tage stilling om de vil køb en grund. Eller hvis spilleren skal betale for at lande på en andens grund
+
+7.	Hvorfor parenteser. 
+Downcasting fra parent klassen Field til child klassen Property. Og igen downcasting fra Field til Tax
+
+8.	a.getResponseMsg(). Ja eller Nej til at købe en grund
+
+9.	Den stiller spørgsmål til spilleren, og håndterer hvilke svar spilleren kommer med
+
+
+10.	Alle klasser der ikke nedarver fra Field: BankAccount, Board, UI, Player, Purchabless
+
+11.	Den switcher på felttype og laver et nyt objekt ud fra hvilken case vi er i. (start/land/business osv )
+
+
+12.	getAction(). 1. Vil du købe, 2. ejer allerede, 3. ejes allerede af en anden spiller
+
+13.	setMessages(). Den er inde i en try catch da der er mulighed for den ikke er ejet af en anden spiller endnu.
+
+14.	super(). Kaldes så variablen fra Field nedarves
